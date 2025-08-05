@@ -18,7 +18,7 @@ setup(
     description="Privacy-first AI agent system using local GPT-OSS models",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/your-username/gpt-oss-agent",
+    url="https://github.com/haasonsaas/gpt-oss-agent",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -46,8 +46,8 @@ setup(
     },
     keywords="ai, gpt, ollama, rag, file-management, knowledge-base, privacy, local-ai",
     project_urls={
-        "Bug Reports": "https://github.com/your-username/gpt-oss-agent/issues",
-        "Source": "https://github.com/your-username/gpt-oss-agent",
-        "Documentation": "https://github.com/your-username/gpt-oss-agent/wiki",
+        "Bug Reports": "https://github.com/haasonsaas/gpt-oss-agent/issues",
+        "Source": "https://github.com/haasonsaas/gpt-oss-agent",
+        "Documentation": "https://github.com/haasonsaas/gpt-oss-agent/wiki",
     },
 )

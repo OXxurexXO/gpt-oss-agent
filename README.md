@@ -26,29 +26,67 @@ A powerful, privacy-first AI agent system that combines intelligent knowledge ma
 
 ## 🚀 Quick Start
 
-### Prerequisites
-
-- Python 3.8+
-- [Ollama](https://ollama.ai) installed and running
-- GPT-OSS models (20B or 120B)
-
-### Installation
+### 🎯 One-Command Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/gpt-oss-agent.git
+# Clone and run the automated installer
+git clone https://github.com/haasonsaas/gpt-oss-agent.git
 cd gpt-oss-agent
+chmod +x install.sh
+./install.sh
+```
 
+The installer will automatically:
+- ✅ Check system requirements (16GB+ RAM recommended)
+- ✅ Install Homebrew (macOS)
+- ✅ Install Python 3.11+
+- ✅ Install and configure Ollama
+- ✅ Download GPT-OSS models (20B and 120B if enough RAM)
+- ✅ Set up Python virtual environment
+- ✅ Install all dependencies
+- ✅ Create startup scripts
+- ✅ Initialize the knowledge base
+
+### 🚀 Start Using
+
+```bash
+# Start the agent (after installation)
+./start_agent.sh
+
+# Or manually
+source venv/bin/activate
+python gpt_oss_agent.py
+```
+
+### 📋 Prerequisites
+
+- **macOS** (Apple Silicon recommended for best performance)
+- **16GB+ RAM** (64GB+ recommended for GPT-OSS-120B)
+- **50GB+ free disk space**
+- **Internet connection** (for initial setup only)
+
+### 🔧 Manual Installation
+
+If you prefer manual installation:
+
+```bash
 # Create virtual environment
-python -m venv agent_env
-source agent_env/bin/activate  # On Windows: agent_env\Scripts\activate
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 
+# Install and start Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+ollama serve &
+
 # Pull GPT-OSS models
 ollama pull gpt-oss:20b    # Smaller, faster model
 ollama pull gpt-oss:120b   # Larger, more capable model
+
+# Run initialization
+python init_gpt_oss_agent.py
 ```
 
 ### Quick Test
@@ -237,11 +275,36 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ChromaDB](https://www.trychroma.com/) for vector database
 - [SentenceTransformers](https://www.sbert.net/) for embeddings
 
+## 🗑️ Uninstalling
+
+To completely remove the GPT-OSS Agent:
+
+```bash
+./uninstall.sh
+```
+
+This will remove:
+- Virtual environment and Python dependencies
+- Knowledge base and indexed documents
+- Temporary files and logs
+- Startup scripts
+
+**Note**: Ollama and the GPT-OSS models will remain installed. To remove them:
+
+```bash
+# Remove models (optional)
+ollama rm gpt-oss:20b
+ollama rm gpt-oss:120b
+
+# Remove Ollama (optional)
+brew uninstall ollama
+```
+
 ## 🆘 Support
 
-- 📖 [Documentation](https://github.com/your-username/gpt-oss-agent/wiki)
-- 🐛 [Issue Tracker](https://github.com/your-username/gpt-oss-agent/issues)
-- 💬 [Discussions](https://github.com/your-username/gpt-oss-agent/discussions)
+- 📖 [Documentation](https://github.com/haasonsaas/gpt-oss-agent/wiki)
+- 🐛 [Issue Tracker](https://github.com/haasonsaas/gpt-oss-agent/issues)
+- 💬 [Discussions](https://github.com/haasonsaas/gpt-oss-agent/discussions)
 
 ## 🎯 Roadmap
 

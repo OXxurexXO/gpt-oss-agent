@@ -59,10 +59,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-username/gpt-oss-agent"
-Repository = "https://github.com/your-username/gpt-oss-agent.git"
-Documentation = "https://github.com/your-username/gpt-oss-agent/wiki"
-"Bug Reports" = "https://github.com/your-username/gpt-oss-agent/issues"
+Homepage = "https://github.com/haasonsaas/gpt-oss-agent"
+Repository = "https://github.com/haasonsaas/gpt-oss-agent.git"
+Documentation = "https://github.com/haasonsaas/gpt-oss-agent/wiki"
+"Bug Reports" = "https://github.com/haasonsaas/gpt-oss-agent/issues"
 
 [project.scripts]
 gpt-oss-agent = "gpt_oss_agent:main"
