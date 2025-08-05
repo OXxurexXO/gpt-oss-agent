@@ -1,0 +1,108 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpt-oss-agent"
+version = "1.0.0"
+description = "Privacy-first AI agent system using local GPT-OSS models"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "GPT-OSS Agent Contributors"}
+]
+maintainers = [
+    {name = "GPT-OSS Agent Contributors"}
+]
+keywords = [
+    "ai", 
+    "gpt", 
+    "ollama", 
+    "rag", 
+    "file-management", 
+    "knowledge-base", 
+    "privacy", 
+    "local-ai"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Filesystems",
+    "Topic :: Text Processing :: Indexing",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "ollama>=0.3.0",
+    "chromadb>=0.4.0",
+    "sentence-transformers>=2.2.0",
+    "PyPDF2>=3.0.0",
+    "python-docx>=0.8.11",
+    "pyyaml>=6.0",
+    "numpy>=1.21.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "pytest>=7.0.0",
+    "pytest-cov>=3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/gpt-oss-agent"
+Repository = "https://github.com/your-username/gpt-oss-agent.git"
+Documentation = "https://github.com/your-username/gpt-oss-agent/wiki"
+"Bug Reports" = "https://github.com/your-username/gpt-oss-agent/issues"
+
+[project.scripts]
+gpt-oss-agent = "gpt_oss_agent:main"
+knowledge-agent = "knowledge_agent:main"  
+file-agent = "file_agent:main"
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "dist",
+    "build",
+    "*.egg-info",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"

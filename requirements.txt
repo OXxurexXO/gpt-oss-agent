@@ -1,0 +1,19 @@
+# GPT-OSS Agent Dependencies
+
+# Core AI libraries
+ollama>=0.3.0
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+
+# Document processing
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+
+# Data processing
+pyyaml>=6.0
+numpy>=1.21.0
+
+# Optional dependencies for enhanced functionality
+black>=22.0.0  # Code formatting
+flake8>=4.0.0  # Code linting
+pytest>=7.0.0  # Testing framework
